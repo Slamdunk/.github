@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default configuration for repositories maintaned by Slamdunk. Taken from https://github.com/Ocramius/.github/blob/master/renovate-config.json",
+  "extends": [
+    ":dependencyDashboard",
+    ":ignoreModulesAndTests",
+    ":automergeMinor",
+    ":automergeBranch",
+    ":semanticCommitsDisabled",
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":enableVulnerabilityAlerts",
+    ":label(renovate)",
+    "group:allNonMajor"
+  ],
+  "commitBodyTable": true,
+  "rangeStrategy": "bump",
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "php"
+      ],
+      "rangeStrategy": "replace",
+      "extends": [
+        ":automergeDisabled",
+        ":automergePr"
+      ],
+      "ignoreUnstable": false,
+      "groupName": "PHP"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "extends": [
+      ":automergeDisabled",
+      ":automergePr",
+      ":labels(security)"
+    ]
+  }
+}
