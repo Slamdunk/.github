@@ -29,6 +29,12 @@
       ],
       "ignoreUnstable": false,
       "groupName": "PHP"
+    },
+    {
+      "matchManagers": [
+        "dockerfile"
+      ],
+      "enabled": false
     }
   ],
   "vulnerabilityAlerts": {
